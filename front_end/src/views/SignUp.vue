@@ -5,18 +5,18 @@
       <p>Phone Battery</p>
     </div>
     <div class="sign-box">
-      <lable>Log In</lable>
+      <label>Log In</label>
       <div>
-        <lable>Enter your name</lable>
-        <input />
+        <label>Enter your name</label>
+        <input v-model="username" />
       </div>
       <div>
-        <lable>Enter you email address</lable>
-        <input />
+        <label>Enter you email address</label>
+        <input v-model="email"/>
       </div>
       <div class="sign-button">
-        <router-link to="/start"><button>Sign Up</button></router-link>
-        
+        <!-- <router-link to="/start"><button>Sign Up</button></router-link> -->
+        <button v-on:click="register()">Sign Up Here</button>
       </div>
     </div>
     <Credit></Credit>
@@ -27,11 +27,22 @@
 <script>
 // @ is an alias to /src
 import Credit from '@/components/Credit.vue'
+import RequestManager from '../utils/RequestManager'
 
 export default {
   name: 'SignUp',
   components: {
     Credit
+  },
+  data: ()=>({
+    username:'',
+    email:''
+  }),
+  methods:{
+    register: async function(){
+      let result = await RequestManager.UserRegister(this.username,this.email)
+      alert('Succeeded')
+    }
   }
 }
 </script>
