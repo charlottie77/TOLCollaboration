@@ -5,13 +5,13 @@
       <p>Phone Battery</p>
     </div>
     <div class="sign-box">
-      <lable>Log In</lable>
+      <label>Log In</label>
       <div>
-        <lable>Enter your name</lable>
+        <label>Enter your name</label>
         <input />
       </div>
       <div>
-        <lable>Enter you email address</lable>
+        <label>Enter you email address</label>
         <input />
       </div>
       <div class="sign-button">

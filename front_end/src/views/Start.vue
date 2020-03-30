@@ -7,11 +7,12 @@
     </div>
     <div class="avatar">
       <img />
-      <lable>Yuqing</lable>
+      <label>Yuqing</label>
     </div>
     <div class="start-button">
-      <lable>You are assigned to Section A</lable>
-      <button>Start My Learning</button>
+      <label>You are assigned to Section A</label>
+      <router-link to="/guide-question"> <button>Start My Learning</button></router-link>
+     
     </div>
   </div>
 </template>
