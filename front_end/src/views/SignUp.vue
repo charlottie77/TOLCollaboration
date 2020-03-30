@@ -41,7 +41,7 @@ export default {
   methods:{
     register: async function(){
       let result = await RequestManager.UserRegister(this.username,this.email)
-      alert('Succeeded')
+//      alert('Succeeded')
     }
   }
 }
