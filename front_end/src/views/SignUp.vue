@@ -41,34 +41,22 @@ export default {
   methods:{
     register: async function(){
       let result = await RequestManager.UserRegister(this.username,this.email)
+      console.log(result.data)
+      localStorage.userData = JSON.stringify(result.data.user)
+      console.log(localStorage.userData)
+      this.$router.push({path:'/start'})
 //      alert('Succeeded')
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .sign-up{
   padding-top: 50px;
-}
-.h1-title {
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 59px;
-  /* identical to box height */
-  text-align: center;
-  color: #FFFFFF;
-  margin: 8px 0px 8px 0px;
-}
-
-.h2-title {
-  font-weight: normal;
-  font-size: 48px;
-  line-height: 59px;
-  /* identical to box height */
-  text-align: center;
-  color: #FFFFFF;
-  margin: 8px 0px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sign-box {
@@ -76,12 +64,44 @@ export default {
   flex-direction: column;
   margin-top: 100px;
   align-items: center;
+  width: 454px;
+  background-color: #363B4F;
+  padding: 18px 24px 40px 24px;
 }
 
 .sb-label{
   font-size: 12px;
   line-height: 15px;
   color: #FFFFFF;
-  justify-self: flex-end;
+  align-self: flex-end;
+}
+.sb-1 {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: flex-start;
+}
+
+.sb-1 input{
+  width: 100%;
+  margin-top: 8px;
+}
+
+.sign-button button {
+  background: #F9B623;
+  border-radius: 8px;
+  width: 166px;
+  height: 56px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  border: none;
+  margin-top: 60px;
+
 }
 </style>
+
+

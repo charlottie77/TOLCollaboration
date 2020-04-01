@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import SignUp from '../views/SignUp.vue'
 import Start from '../views/Start.vue'
 import GuideQuestion from '../views/GuideQuestion.vue'
-import GuideAnswerA from '../views/GuideAnswerA.vue'
+import GuideAnswer from '../views/GuideAnswer.vue'
 // import GuideAnswerB from '../views/GuideAnswerB.vue'
 // import GuideAnswerC from '../views/GuideAnswerC.vue'
 import Video from '../views/Video.vue'
@@ -30,9 +30,9 @@ const routes = [
     component: GuideQuestion
   },
   {
-    path: '/guide-answer-a',
-    name: 'GuideAnswerA',
-    component: GuideAnswerA
+    path: '/guide-answer',
+    name: 'GuideAnswer',
+    component: GuideAnswer
   },
   {
     path: '/video',
