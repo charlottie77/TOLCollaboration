@@ -1,5 +1,5 @@
 const axios = require('axios')
-const baseUrl = 'http://192.168.30.130:3000/api'
+const baseUrl = 'http://localhost:3000/api'
 
 async function UserRegister(username,email){
   try {
