@@ -7,13 +7,13 @@ const userSchema = new Schema({
   sectionIdx: String,
   groupId: {type: Schema.Types.ObjectId, ref: 'Group'},
   Answer:{
-    _pre_: String,
-    _before_: String,
-    _after_ : String
+    pre: String,
+    before: String,
+    after: String
   },
   Score: {
-    _before_ : Number,
-    _after_ : Number
+    before : Number,
+    after : Number
   }
 },{timestamps:true})
 
