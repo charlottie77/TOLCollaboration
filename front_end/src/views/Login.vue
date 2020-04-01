@@ -1,22 +1,17 @@
 <template>
-  <div class="sign-up">
+  <div class="log-in">
     <div class="title">
       <p class="h2-title">Let’s learn about</p>
       <p class="h1-title">Phone Battery</p>
     </div>
-    <div class="sign-box">
-      <label class="sb-label" @click="gotoLogin">Log In</label>
-      <div class="sb-1">
-        <label>Enter your name</label>
-        <input v-model="username" />
-      </div>
+    <div class="login-box">
+      <label class="sb-label" @click="gotoSignup">Sign Up</label>
       <div class="sb-1">
         <label>Enter you email address</label>
         <input v-model="email"/>
       </div>
       <div class="sign-button">
-        <!-- <router-link to="/start"><button>Sign Up</button></router-link> -->
-        <button v-on:click="register()">Sign Up Here</button>
+        <button v-on:click="login()">Log In</button>
       </div>
     </div>
     <Credit></Credit>
@@ -24,45 +19,39 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Credit from '@/components/Credit.vue'
 import RequestManager from '../utils/RequestManager'
 
 export default {
-  name: 'SignUp',
+  data: ()=>({
+    email:''
+  }),
   components: {
     Credit
   },
-  data: ()=>({
-    username:'',
-    email:''
-  }),
   methods:{
-    register: async function(){
-      let result = await RequestManager.UserRegister(this.username,this.email)
+    gotoSignup : function(){
+      this.$router.push({path:'/'})
+    },
+    login: async function(){
+      let result = await RequestManager.UserLogin(this.email)
       console.log(result.data)
       localStorage.userData = JSON.stringify(result.data.user)
-      console.log(localStorage.userData)
-      this.$emit('update-username',this.username)
+      this.$emit('update-username',result.data.user.username)
       this.$router.push({path:'/start'})
-//      alert('Succeeded')
-    },
-    gotoLogin : function(){
-      this.$router.push({path:'/login'})
     }
   }
 }
 </script>
 
 <style scoped>
-.sign-up{
+.log-in{
   padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.sign-box {
+.login-box {
   display: flex;
   flex-direction: column;
   margin-top: 100px;
@@ -71,7 +60,6 @@ export default {
   background-color: #363B4F;
   padding: 18px 24px 40px 24px;
 }
-
 .sb-label{
   font-size: 12px;
   line-height: 15px;
@@ -90,9 +78,8 @@ export default {
   width: 100%;
   margin-top: 8px;
 }
-
 .sign-button button {
-  background: #F9B623;
+  background: #7DAEE9;
   border-radius: 8px;
   width: 166px;
   height: 56px;
@@ -106,5 +93,3 @@ export default {
 
 }
 </style>
-
-
