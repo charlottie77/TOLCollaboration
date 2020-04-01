@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <TopBar v-if="username"></TopBar>
-    <router-view/>
+    <TopBar v-if="username" :username="username"></TopBar>
+    <router-view v-on:update-username="updateUsesrname"/>
   </div>
 </template>
 <script>
@@ -14,8 +14,10 @@ export default {
     username: '',
   }),
   methods: {
-
-  
+    updateUsesrname: function(username){
+      console.log('got message')
+      this.username = username;
+    }
   },
   created: function () {
       let userData = JSON.parse(localStorage.userData);

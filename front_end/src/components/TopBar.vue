@@ -7,6 +7,7 @@
 <script>
 export default {
   name: 'TopBar',
+  props:['username'],
   components: {
     
   },
@@ -18,10 +19,10 @@ export default {
   
   },
   computed: {
-    username: function () {
-      let userData = JSON.parse(localStorage.userData);
-      return userData.username;
-    }
+    // username: function () {
+    //   let userData = JSON.parse(localStorage.userData);
+    //   return userData.username;
+    // }
   },
   created: function () {
       // let userData = JSON.parse(localStorage.userData);

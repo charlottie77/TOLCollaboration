@@ -44,6 +44,7 @@ export default {
       console.log(result.data)
       localStorage.userData = JSON.stringify(result.data.user)
       console.log(localStorage.userData)
+      this.$emit('update-username',this.username)
       this.$router.push({path:'/start'})
 //      alert('Succeeded')
     }
