@@ -1,9 +1,9 @@
 const axios = require('axios')
-const baseUrl = 'http://localhost:3000/api'
+const baseUrl = 'http://localhost:3000/api/user'
 
 async function UserRegister(username,email){
   try {
-    let result = await axios.post(`${baseUrl}/user/regist`,{username,email})
+    let result = await axios.post(`${baseUrl}/regist`,{username,email})
     return result
   } catch (e) {
     console.warn(e)
@@ -12,7 +12,7 @@ async function UserRegister(username,email){
 }
 async function UserLogin(email){
   try {
-    let result = await axios.post(`${baseUrl}/user/login`,{email})
+    let result = await axios.post(`${baseUrl}/login`,{email})
     return result
   } catch (e) {
     console.warn(e)

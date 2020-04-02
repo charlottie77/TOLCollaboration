@@ -83,7 +83,7 @@
           <div class="choices-i">
             <input type="radio" id="c2" value="c2" v-model="gq_picked"> 
             <label></label>
-            <label>b) Charge it until 100% before storing it</label>
+            <label>b) Charge it until 50% before storing it</label>
           </div>
           <div class="choices-i">
             <input type="radio" id="c3" value="c3" v-model="gq_picked"> 
@@ -98,7 +98,7 @@
         </div>
         
       </div>
-      <router-link to="/guide-answer"><button class="guide-answer-btn" v-on:click="setGuideAnswer()">Done</button></router-link>
+      <button class="guide-answer-btn" v-on:click="setGuideAnswer()">Done</button>
     </div>
 
      
@@ -108,58 +108,58 @@
 
 <style scoped>
 
-.guide-question {
-  padding-top: 40px;
-}
+  .guide-question {
+    padding-top: 40px;
+  }
 
-.section-a .question-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;;
-}
-.battery-img {
-  display: flex;
-  flex-direction: column;
-}
+  .section-a .question-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;;
+  }
+  .battery-img {
+    display: flex;
+    flex-direction: column;
+  }
 
-.battery-img img{
-  width: 150px;
-  height: 150px;
-  margin-bottom: 20px;
-}
+  .battery-img img{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
 
-.choices {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
-  margin-left: 45px;
-  margin-bottom: 60px;
-}
-.choices-i {
-  display: flex;
-  margin-top:12px;
-}
+  .choices {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 45px;
+    margin-bottom: 60px;
+  }
+  .choices-i {
+    display: flex;
+    margin-top:12px;
+  }
 
-.choices-i label {
-  font-weight: bold;
-}
+  .choices-i label {
+    font-weight: bold;
+  }
 
-.guide-answer-btn {
-  background: #F9B623;
-  border-radius: 8px;
-  width: 166px;
-  height: 56px;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 29px;
-  text-align: center;
-  color: #FFFFFF;
-  border: none;
-  margin-top: 60px;
+  .guide-answer-btn {
+    background: #F9B623;
+    border-radius: 8px;
+    width: 166px;
+    height: 56px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    margin-top: 60px;
 
-}
+  }
 
 
 </style>
@@ -181,7 +181,10 @@ export default {
     setGuideAnswer: async function() {
       // let result = await RequestManager.UserRegister(this.username,this.email)
       let result = await RequestManager.UserSetAnswer('pre',this.gq_picked, this.userid)
-
+      let temp_local = JSON.parse(localStorage.userData)
+      temp_local.answer = this.gq_picked;
+      localStorage.userData = JSON.stringify(temp_local);
+      this.$router.push({path:'/guide-answer'})
     }  
   },
   created: function () {
