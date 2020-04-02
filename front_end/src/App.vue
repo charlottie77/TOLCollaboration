@@ -63,5 +63,12 @@ body, html{
   margin: 8px 0px 8px 0px;
 }
 
+.text{
+  font-weight: normal;
+  font-size: 20px;
+  /* identical to box height */
+  color: #FFFFFF;
+}
+
 
 </style>

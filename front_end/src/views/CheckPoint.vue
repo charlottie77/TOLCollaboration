@@ -176,22 +176,22 @@
           </div>
         </div>
         <div class="section-c-q3">
-          <p>Q3. What is the unnecessary selection criteria for picking the right anode of Lithium-Ion batteries?</p>
+          <p>Q3. Choose the suitable heat for keep the phone battery stay longer</p>
           <div>
             <input type="radio" id="sec-c-q3-i1"> 
-            <label>a) The selected anode material and chemistry works well with the electrolyte and the cathode </label>
+            <label>a) -10 ºC -  14 ºF </label>
           </div>
           <div>
             <input type="radio" id="sec-c-q3-i2"> 
-            <label>b) The solid electrolyte interface does not get very thick. It’s a layer that can form and will form as you charge and discharge. </label>
+            <label>b) 0 ºC - 32 ºF </label>
           </div>
           <div>
             <input type="radio" id="sec-c-q3-i3"> 
-            <label>c) It doesn’t get very dense, because that will degrade the performance of the battery.</label>
+            <label>c) 20 ºC -  68 ºF </label>
           </div>
           <div>
             <input type="radio" id="sec-c-q3-i4"> 
-            <label>d) It needs to be  Lithium compound.</label>
+            <label>d) 55  ºC / 131º F</label>
           </div>
         </div>
       </div>

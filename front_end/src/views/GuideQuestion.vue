@@ -68,7 +68,7 @@
       </div>
       <router-link to="/guide-answer"><button class="guide-answer-btn" v-on:click="setGuideAnswer()">Done</button></router-link>
     </div>
-    <div class="section-a" v-if="this.section == 'C'">
+    <div class="section-c" v-if="this.section == 'C'">
       <div class="title">
         <p class="h1-title">Which of these is a wrong way to handle a Li-ion battery which you no longer need?</p>
       </div>
@@ -160,6 +160,29 @@
     margin-top: 60px;
 
   }
+  .section-b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-b .question-div {
+    width: 60%;
+  }
+
+  .section-c {
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-c .title {
+    width: 70%;
+  }
+
+   .section-c .question-div {
+    width: 60%;
+  }
 
 
 </style>
@@ -192,7 +215,6 @@ export default {
     this.userid = userData._id;
     this.username = userData.username;
     this.section = userData.sectionIdx;
-    console.log(this.section)
   }
 }
 </script>
