@@ -34,7 +34,7 @@
         </div>
         
       </div>
-      <router-link to="/guide-answer"><button class="guide-answer-btn" v-on:click="setGuideAnswer()">Done</button></router-link>
+      <button class="guide-answer-btn" v-on:click="setGuideAnswer()">Done</button>
     </div>
     <div class="section-b" v-if="this.section == 'B'">
       <div class="title">
@@ -66,7 +66,7 @@
         </div>
         
       </div>
-      <router-link to="/guide-answer"><button class="guide-answer-btn" v-on:click="setGuideAnswer()">Done</button></router-link>
+      <button class="guide-answer-btn" v-on:click="setGuideAnswer()">Done</button>
     </div>
     <div class="section-c" v-if="this.section == 'C'">
       <div class="title">

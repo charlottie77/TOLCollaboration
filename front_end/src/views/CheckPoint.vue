@@ -63,7 +63,7 @@
           </div>
         </div>
       </div>
-      <button>Done</button>
+      <button @click="submitCheckPoint">Done</button>
     </div>
     <div class="check-b" v-if="this.section == 'B'">
       <div class="title">
@@ -129,7 +129,7 @@
           </div>
         </div>
       </div>
-      <button>Done</button>
+      <button @click="submitCheckPoint">Done</button>
 
     </div>
     <div class="check-c" v-if="this.section == 'C'">
@@ -138,22 +138,22 @@
       </div>
       <div class="check-question-area">
         <div class="section-c-q1">
-          <p>Q1. What are the benefits for using lithium ion batteries?</p>
+          <p>Q1. Select all that apply.</p>
           <div>
             <input type="radio" value='A' id="sec-c-q1-i1"  v-model="Q1"> 
-            <label>a) low energy density</label>
+            <label>a) lNever store or charge battery pack inside your car in extreme temperatures, since extreme temperature could ignite fire.</label>
           </div>
           <div>
             <input type="radio" value='B' id="sec-c-q1-i2"  v-model="Q1"> 
-            <label>b) no memory effect</label>
+            <label>b) If your phone case is at normal temperature and the battery is fully charged but still plugged in, there is still some risk of overcharging</label>
           </div>
           <div>
             <input type="radio" value='C' id="sec-c-q1-i3"  v-model="Q1"> 
-            <label>c) a safety hazard</label>
+            <label>c) If you have to store the battery over a longer period of time then drain the full battery beforehand. </label>
           </div>
           <div>
             <input type="radio" value='D' id="sec-c-q1-i4"  v-model="Q1"> 
-            <label>d) low shelf lift</label>
+            <label>d) If the dent in your battery is  really small, you can ignore it as the battery has strong metal cases.</label>
           </div>
         </div>
         <div class="section-c-q2">
@@ -179,19 +179,19 @@
           <p>Q3. Choose the suitable heat for keep the phone battery stay longer</p>
           <div>
             <input type="radio" value='A' id="sec-c-q3-i1" v-model="Q3"> 
-            <label>a) The selected anode material and chemistry works well with the electrolyte and the cathode </label>
+            <label>a) -10 ºC /  14 ºF </label>
           </div>
           <div>
             <input type="radio" value='B' id="sec-c-q3-i2" v-model="Q3"> 
-            <label>b) The solid electrolyte interface does not get very thick. It’s a layer that can form and will form as you charge and discharge. </label>
+            <label>b) 0 ºC / 32 ºF </label>
           </div>
           <div>
             <input type="radio" value='C' id="sec-c-q3-i3" v-model="Q3"> 
-            <label>c) It doesn’t get very dense, because that will degrade the performance of the battery.</label>
+            <label>c) 20 ºC /  68 ºF </label>
           </div>
           <div>
             <input type="radio" value='D' id="sec-c-q3-i4" v-model="Q3"> 
-            <label>d) It needs to be  Lithium compound.</label>
+            <label>d) 55  ºC / 131º F </label>
           </div>
         </div>
       </div>
