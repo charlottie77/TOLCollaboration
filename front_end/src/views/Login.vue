@@ -40,7 +40,13 @@ export default {
       setLS('userData',result.data.user)
       console.log(getLS('userData'))
       this.$emit('update-username',result.data.user.username)
-      this.$router.push({path:'/start'})
+      let userData = result.data.user
+      if (userData.Answer){
+        if(userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.group == null) this.$router.push({path:'/final'})
+        else if (userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.group != null) this.$router.push({path:'/group-score'})
+        else this.$router.push({path:'/start'})
+      }
+      else  this.$router.push({path:'/start'})
     }
   }
 }

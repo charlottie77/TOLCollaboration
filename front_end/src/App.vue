@@ -35,7 +35,7 @@ export default {
   text-align: center;
   color: #fff;
   background-color: #1F2437;
-  height: 100%;
+  min-height: 100%;
 }
 
 body, html{

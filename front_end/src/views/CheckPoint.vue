@@ -286,7 +286,9 @@ export default {
         RM.UserSetAnswer('before',{Q1:this.Q1,Q2:this.Q2,Q3:this.Q3},this.userid),
         RM.UserSetScore('before',score,this.userid)
       ]) 
-      console.log(result)
+      result = await RM.UserLogin(getLS('userData').email)
+      console.log(result.data)
+      setLS('userData',result.data.user)
       this.$router.push({path:'/check-answer'})
     }
   },

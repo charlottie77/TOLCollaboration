@@ -66,11 +66,36 @@ router.put('/score/:stage', async (req,res,next)=>{
   updateObj['Score.'+stage] = score
   try {
     await UserModel.findByIdAndUpdate(userId,updateObj).exec()
-    return res.sendStatus(200)
+    res.sendStatus(200)
   } catch (e) {
     console.error(`Failed to update ${stage} score for user: ${userId} with error message: ${e.message}`)
     return res.sendStatus(500)
   }
+  if (stage=='after') {
+    let result = await UserModel.findById(userId).populate('groupId').exec()
+    let members = result.groupId.members
+    if(members.length < 3) return
+    console.log(members)
+    let queryObj = {$or:[]}
+    members.forEach(e => {
+      queryObj.$or.push({'_id':e})
+    });
+    let users = await UserModel.find(queryObj).select('Score')
+    let userScores = []
+    for(let i = 0; i < 3; i++){
+      if (!users[i].Score.after) return
+      userScores.push(users[i].Score.after)
+    }
+    sumScore = userScores[0]+userScores[1]+userScores[2]
+    let promises = []
+    for(let i = 0; i < 3; i++){
+      userScores[i] = 0.5*userScores[i] + 0.5*sumScore
+      promises.push(UserModel.findByIdAndUpdate(users[i]._id,{'Score.group':userScores[i]}))
+    }
+    await Promise.all(promises)
+    return
+  }
+  else return
 })
 
 router.put('/answer/:stage', async (req,res,next)=>{

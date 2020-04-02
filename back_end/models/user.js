@@ -13,7 +13,8 @@ const userSchema = new Schema({
   },
   Score: {
     before : Number,
-    after : Number
+    after : Number,
+    group: Number
   }
 },{timestamps:true})
 
