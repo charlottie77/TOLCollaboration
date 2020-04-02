@@ -1,6 +1,6 @@
 <template>
   <div class="check-point">
-    <div class="check-a">
+    <div class="check-a" v-if="this.section == 'A'">
       <div class="title">
         <p>Check Point</p>
       </div>
@@ -65,7 +65,7 @@
       </div>
       <button>Done</button>
     </div>
-    <div class="check-b">
+    <div class="check-b" v-if="this.section == 'B'">
       <div class="title">
         <p>Check Point</p>
       </div>
@@ -132,7 +132,7 @@
       <button>Done</button>
 
     </div>
-    <div class="check-c">
+    <div class="check-c" v-if="this.section == 'C'">
       <div class="title">
         <p>Check Point</p>
       </div>
@@ -203,3 +203,29 @@
 
   </div>
 </template>
+
+<script>
+import RequestManager from '../utils/RequestManager'
+
+export default {
+  name: 'CheckPoint',
+  components: {
+
+  },
+  data: () =>({
+    username: '',
+    section: '',
+    userid: '',
+  }),
+  methods: {
+    
+  },
+  created: function () {
+    let userData = JSON.parse(localStorage.userData);
+    this.userid = userData._id;
+    this.username = userData.username;
+    this.section = userData.sectionIdx;
+    console.log(this.section)
+  }
+}
+</script>

@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="feedback-div">
-        <lable>Feedback</lable>
+        <label>Feedback</label>
         <p>Yes, you are right! Battery is made by Chemical Solution. A current is just the rate of flow of charge through a point which is a concept, 
             not a material that can be used to make something.And metal is just one of the many components that are present in the battery.
             And the phone cannot run if it using cotton.  </p>

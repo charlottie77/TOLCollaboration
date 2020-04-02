@@ -45,10 +45,9 @@
   
 </template>
 <script>
-import RequestManager from '../utils/RequestManager'
 
 export default {
-  name: 'GuideQuestion',
+  name: 'Video',
   components: {
 
   },
