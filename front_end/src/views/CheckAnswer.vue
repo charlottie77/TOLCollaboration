@@ -82,7 +82,7 @@
           </div>
           <div class="feedback-div">
             <label>Feedback</label>
-            <p>Correct! Generally, the negative electrode of a conventional lithium-ion cell is made from carbon. </p>
+            <p>Generally, the negative electrode of a conventional lithium-ion cell is made from carbon. </p>
           </div>
         </div>
     </div>
@@ -167,7 +167,7 @@
         </div>
         <div class="feedback-div">
           <label>Feedback</label>
-          <p>during a discharge of electricity, the chemical on the anode releases electrons to the negative terminal 
+          <p>During a discharge of electricity, the chemical on the anode releases electrons to the negative terminal 
             and ions in the electrolyte through what’s called an oxidation reaction. Meanwhile, at the positive terminal, 
             the cathode accepts electrons, completing the circuit for the flow of electrons. </p>
         </div>
