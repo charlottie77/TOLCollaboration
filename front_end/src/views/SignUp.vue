@@ -44,7 +44,15 @@ export default {
       localStorage.userData = JSON.stringify(result.data.user)
       console.log(localStorage.userData)
       this.$emit('update-username',result.data.user.username)
-      this.$router.push({path:'/start'})
+      let userData = result.data.user
+      console.log(userData)
+      if (userData.Answer){
+        if(userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.after == null && userData.Score.group == null) this.$router.push({path:'/final'})
+        else if (userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.after != null && userData.Score.group == null) this.$router.push({path:'/report'})
+        else if (userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.after != null && userData.Score.group != null) this.$router.push({path:'/group-report'})
+        else this.$router.push({path:'/start'})
+      }
+      else  this.$router.push({path:'/start'})
 //      alert('Succeeded')
     },
     gotoLogin : function(){
