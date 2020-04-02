@@ -8,7 +8,7 @@
       <label class="sb-label" @click="gotoSignup">Sign Up</label>
       <div class="sb-1">
         <label>Enter you email address</label>
-        <input v-model="email"/>
+        <input class="dark-input" v-model="email"/>
       </div>
       <div class="sign-button">
         <button v-on:click="login()">Log In</button>

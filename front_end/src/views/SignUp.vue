@@ -8,11 +8,11 @@
       <label class="sb-label" @click="gotoLogin">Log In</label>
       <div class="sb-1">
         <label>Enter your name</label>
-        <input v-model="username" />
+        <input class="dark-input" v-model="username" />
       </div>
       <div class="sb-1">
         <label>Enter you email address</label>
-        <input v-model="email"/>
+        <input class="dark-input" v-model="email"/>
       </div>
       <div class="sign-button">
         <!-- <router-link to="/start"><button>Sign Up</button></router-link> -->
