@@ -11,6 +11,7 @@ import Video from '../views/Video.vue'
 import CheckPoint from '../views/CheckPoint.vue'
 import CheckAnswer from '../views/CheckAnswer.vue'
 import Doc from '../views/Doc.vue'
+import FinalQuiz from '../views/FinalQuiz.vue'
 
 Vue.use(VueRouter)
 
@@ -59,6 +60,11 @@ const routes = [
     path: '/doc',
     name: 'Doc',
     component: Doc
+  },
+  {
+    path: '/final-quiz',
+    name: 'FinalQuiz',
+    component: FinalQuiz
   },
   {
     path: '/about',
