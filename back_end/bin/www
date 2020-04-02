@@ -29,7 +29,7 @@ initApp(app)
 async function initApp(app){
   try {
     console.log("==== connecting to DB ====")
-    await mongoose.connect('mongodb://127.0.0.1:32768/TOLProject2', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+    await mongoose.connect('mongodb://149.28.57.37:32768/TOLProject2', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
     console.log("===== DB connected. =====")
   } catch (error) {
     console.error("===== Failed to connect to DB =====")
