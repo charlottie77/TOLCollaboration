@@ -5,6 +5,7 @@ import Start from '../views/Start.vue'
 import GuideQuestion from '../views/GuideQuestion.vue'
 import GuideAnswer from '../views/GuideAnswer.vue'
 import Login from '../views/Login.vue'
+import Final from '../views/FinalQuiz.vue'
 // import GuideAnswerB from '../views/GuideAnswerB.vue'
 // import GuideAnswerC from '../views/GuideAnswerC.vue'
 import Video from '../views/Video.vue'
@@ -59,6 +60,11 @@ const routes = [
     path: '/doc',
     name: 'Doc',
     component: Doc
+  },
+  {
+    path: '/final',
+    name: 'Final',
+    component: Final
   },
   {
     path: '/about',
