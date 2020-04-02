@@ -21,6 +21,7 @@
 <script>
 import Credit from '@/components/Credit.vue'
 import RequestManager from '../utils/RequestManager'
+import {setLS,getLS} from '../utils/LocalStorageManager'
 
 export default {
   data: ()=>({
@@ -36,7 +37,8 @@ export default {
     login: async function(){
       let result = await RequestManager.UserLogin(this.email)
       console.log(result.data)
-      localStorage.userData = JSON.stringify(result.data.user)
+      setLS('userData',result.data.user)
+      console.log(getLS('userData'))
       this.$emit('update-username',result.data.user.username)
       this.$router.push({path:'/start'})
     }
