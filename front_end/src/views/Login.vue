@@ -41,6 +41,8 @@ export default {
       console.log(getLS('userData'))
       this.$emit('update-username',result.data.user.username)
       let userData = result.data.user
+      // let groupMember = await RequestManager.UserGetGroupmembers(result.data.user.groupId)
+      // console.log(groupMember)
       if (userData.Answer){
         if(userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.after == null && userData.Score.group == null) this.$router.push({path:'/final'})
         else if (userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.after != null && userData.Score.group == null) this.$router.push({path:'/report'})
@@ -49,7 +51,7 @@ export default {
       }
       else  this.$router.push({path:'/start'})
     }
-  }
+  },
 }
 </script>
 

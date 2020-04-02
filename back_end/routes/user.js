@@ -8,7 +8,7 @@ const stages = ['pre','before','after']
 async function fetchOneGroup(userId){
   //check if there is any group not full
   try {
-    let result = await GroupModel.findOne({"members.2":{$exists:false}})
+    let result = await GroupModel.findOne({"members.2":{$exists:false}}).exec()
     if(result === null){
       let group = new GroupModel({members:[userId]})
       await group.save()
@@ -139,6 +139,16 @@ router.get('/score/:userId', async (req,res,next)=>{
     return res.send({error:false, score})
   } catch (e) {
     console.error(`Failed to get score for user: ${userId} with error message: ${e.message}`)
+    return res.sendStatus(500)
+  }
+})
+router.get('/groupmember/:groupId', async(req,res,next)=>{
+  let {groupId} = req.params
+  try{
+    let group = await GroupModel.findById(groupId).populate('members').exec()
+    return res.send({error:false,group})
+  } catch(e){
+    console.error(`Failed to get group info with error message: ${e.message}`)
     return res.sendStatus(500)
   }
 })

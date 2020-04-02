@@ -55,4 +55,17 @@ async function UserGetAnswer(userId){
     return null
   }
 }
-module.exports = {UserRegister, UserLogin, UserSetScore, UserSetAnswer, UserGetScore, UserGetAnswer}
+async function UserGetGroupmembers(groupId){
+  try {
+    let result = await axios.get(`${baseUrl}/groupmember/${groupId}`)
+    let members = []
+    result.data.group.members.forEach(e => {
+      members.push(e.username)
+    });
+    return members
+  } catch (e) {
+    console.warn(e)
+    return null
+  }
+}
+module.exports = {UserRegister, UserLogin, UserSetScore, UserSetAnswer, UserGetScore, UserGetAnswer,UserGetGroupmembers}
