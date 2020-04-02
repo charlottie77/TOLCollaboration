@@ -205,7 +205,6 @@
 </template>
 
 <script>
-import RequestManager from '../utils/RequestManager'
 import {getLS,setLS} from '../utils/LocalStorageManager'
 import RM from '../utils/RequestManager'
 const rightAnswer = {

@@ -4,7 +4,7 @@
       <p>Good job! You Learned Well!</p>
     </div>
     <div>
-      <label>3/3</label>
+      <label>{{score}}/3</label>
       <label>your pts</label>
     </div>
 
@@ -56,6 +56,10 @@
             <label>d) Intercalated carbon compound</label>
           </div>
         </div>
+        <div class="feedback-div f-a-q2">
+          <label>Feedback</label>
+          <p>f-a-q1 </p>
+        </div>
         <div class="section-a-q3">
           <p>Q3. What is the unnecessary selection criteria for picking the right anode of Lithium-Ion batteries?</p>
           <div>
@@ -74,6 +78,10 @@
             <input type="radio" value='D' id="sec-a-q3-i4" v-model="Q3"> 
             <label>d) It needs to be  Lithium compound.</label>
           </div>
+        </div>
+        <div class="feedback-div f-a-q3">
+          <label>Feedback</label>
+          <p>f-a-q1 </p>
         </div>
       </div>
      
@@ -102,6 +110,10 @@
             <label>d) Batteries are constant voltage providers. </label>
           </div>
         </div>
+        <div class="feedback-div f-b-q1">
+          <label>Feedback</label>
+          <p>f-a-q1 </p>
+        </div>
         <div class="section-b-q2">
           <p>Q2. Which of the statements about Lithium-Ion batteries is wrong?</p>
           <div>
@@ -120,6 +132,10 @@
             <input type="radio" value='D' id="sec-b-q2-i4" v-model="Q2"> 
             <label>d) A battery is made up of an anode, cathode, separator, electrolyte, and two current collectors (positive and negative).</label>
           </div>
+        </div>
+        <div class="feedback-div f-b-q2">
+          <label>Feedback</label>
+          <p>f-a-q1 </p>
         </div>
         <div class="section-c-q3">
           <p>Q3. Choose the correct process for each blank. </p>
@@ -141,9 +157,12 @@
             <label>d) Anode; lithium ions; cathode; electrons </label>
           </div>
         </div>
+        <div class="feedback-div f-b-q3">
+          <label>Feedback</label>
+          <p>f-a-q1 </p>
+        </div>
       </div>
     
-
     </div>
     <div class="check-c" v-if="this.section == 'C'">
       <div class="title">
@@ -169,6 +188,10 @@
             <label>d) If the dent in your battery is  really small, you can ignore it as the battery has strong metal cases.</label>
           </div>
         </div>
+        <div class="feedback-div f-c-q1">
+          <label>Feedback</label>
+          <p>f-a-q1 </p>
+        </div>
         <div class="section-c-q2">
           <p>Q2. Which of these is a wrong way to handle a Li-ion battery which you no longer need?</p>
           <div>
@@ -188,6 +211,10 @@
             <label>d) Keep it safely in a cool place</label>
           </div>
         </div>
+        <div class="feedback-div f-c-q2">
+          <label>Feedback</label>
+          <p>f-a-q1 </p>
+        </div>
         <div class="section-c-q3">
           <p>Q3. Choose the suitable heat for keep the phone battery stay longer</p>
           <div>
@@ -206,6 +233,10 @@
             <input type="radio" value='D' id="sec-c-q3-i4" v-model="Q3"> 
             <label>d) 55  ºC / 131º F </label>
           </div>
+        </div>
+        <div class="feedback-div f-c-q3">
+          <label>Feedback</label>
+          <p>f-a-q1 </p>
         </div>
       </div>
      
@@ -241,6 +272,8 @@
 </style>
 
 <script>
+import {getLS,setLS} from '../utils/LocalStorageManager'
+
 export default {
   name: 'GuideQuestion',
   components: {
@@ -250,7 +283,11 @@ export default {
     username: '',
     section: '',
     userid: '',
-    gq_picked: ''
+    score:0,
+    gq_picked: '',
+    Q1:'',
+    Q2:'',
+    Q3:''
   }),
   methods: {
     
@@ -260,6 +297,12 @@ export default {
     this.userid = userData._id;
     this.username = userData.username;
     this.section = userData.sectionIdx;
+    let {Q1,Q2,Q3} = getLS('checkPointAnswer') ? getLS('checkPointAnswer') : {Q1:'',Q2:'',Q3:''}
+    this.score = getLS('checkPointScore') ? getLS('checkPointScore') : -1
+    this.Q1 = Q1
+    this.Q2 = Q2
+    this.Q3 = Q3
+    console.log(this.section)
   }
 }
 </script>
