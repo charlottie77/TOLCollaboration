@@ -7,9 +7,9 @@ const userSchema = new Schema({
   sectionIdx: String,
   groupId: {type: Schema.Types.ObjectId, ref: 'Group'},
   Answer:{
-    pre: String,
-    before: String,
-    after: String
+    pre: Object,
+    before: Object,
+    after: Object
   },
   Score: {
     before : Number,

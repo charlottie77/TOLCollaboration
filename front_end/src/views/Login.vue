@@ -42,8 +42,9 @@ export default {
       this.$emit('update-username',result.data.user.username)
       let userData = result.data.user
       if (userData.Answer){
-        if(userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.group == null) this.$router.push({path:'/final'})
-        else if (userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.group != null) this.$router.push({path:'/group-score'})
+        if(userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.after == null && userData.Score.group == null) this.$router.push({path:'/final'})
+        else if (userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.after != null && userData.Score.group == null) this.$router.push({path:'/report'})
+        else if (userData.Answer.pre != null && userData.Answer.before != null && userData.Answer.after != null && userData.Score.group != null) this.$router.push({path:'/group-report'})
         else this.$router.push({path:'/start'})
       }
       else  this.$router.push({path:'/start'})

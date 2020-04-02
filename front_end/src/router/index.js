@@ -13,6 +13,7 @@ import CheckPoint from '../views/CheckPoint.vue'
 import CheckAnswer from '../views/CheckAnswer.vue'
 import Doc from '../views/Doc.vue'
 import FinalReport from '../views/FinalReport.vue'
+import GroupReport from '../views/GroupReport.vue'
 
 Vue.use(VueRouter)
 
@@ -71,6 +72,11 @@ const routes = [
     path: '/report',
     name: 'FinalReport',
     component: FinalReport
+  },
+  {
+    path: '/group-report',
+    name: 'GroupReport',
+    component: GroupReport
   },
   {
     path: '/about',

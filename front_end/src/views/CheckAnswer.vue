@@ -378,7 +378,7 @@ export default {
     this.username = userData.username;
     this.section = userData.sectionIdx;
     let {Q1,Q2,Q3} = getLS('checkPointAnswer') ? getLS('checkPointAnswer') : {Q1:'',Q2:'',Q3:''}
-    this.score = getLS('checkPointScore') ? getLS('checkPointScore') : -1
+    this.score = getLS('checkPointScore') ? getLS('checkPointScore') : 0
     this.Q1 = Q1
     this.Q2 = Q2
     this.Q3 = Q3

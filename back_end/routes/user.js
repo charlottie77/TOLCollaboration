@@ -104,7 +104,7 @@ router.put('/answer/:stage', async (req,res,next)=>{
   if(!stages.includes(stage)) return res.send({error:true, msg:'stage not exist'})
   //create update object
   let updateObj = {}
-  updateObj['Answer.'+stage] = JSON.stringify(answer)
+  updateObj['Answer.'+stage] = answer
   try {
     await UserModel.findByIdAndUpdate(userId,updateObj).exec()
     return res.sendStatus(200)
