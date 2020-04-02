@@ -2,7 +2,7 @@
   <div class="final-quiz">
     <div class="title">
         <p class="h1-title">Your group have passed the model !!</p>
-        <p>Your the final score is composed by 50% of their own score and 50% of their team score.</p>
+        <p class="title-1">Your the final score is composed by 50% of their own score and 50% of their team score.</p>
     </div>
     <div class="fq-score-div">
     <label>{{score}}/18 </label>
@@ -244,9 +244,9 @@
       </div>
 
     </div>
-    <!-- <div class="final-button">
-        <router-link to=""> <button  class="final-btn">Next</button></router-link>
-      </div> -->
+    <div class="final-button">
+        <router-link to="/cong"> <button  class="final-btn">Next</button></router-link>
+      </div>
 
   </div>
 </template>
@@ -313,6 +313,17 @@
 }
 
 .feedback-div label {
+  font-weight: bold;
+}
+
+.fq-score-div {
+  font-weight: bold;
+  color: #FFC107;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.title-1 {
   font-weight: bold;
 }
 </style>

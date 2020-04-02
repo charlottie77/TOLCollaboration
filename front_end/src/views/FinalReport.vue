@@ -244,9 +244,9 @@
       </div>
 
     </div>
-    <!-- <div class="final-button">
-        <router-link to=""> <button  class="final-btn">Next</button></router-link>
-      </div> -->
+    <div class="final-button">
+        <router-link to="/cong"> <button  class="final-btn">Next</button></router-link>
+      </div>
 
   </div>
 </template>
@@ -314,6 +314,14 @@
 
 .feedback-div label {
   font-weight: bold;
+}
+
+.fq-score-div {
+  font-weight: bold;
+  color: #FFC107;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
 }
 </style>
 

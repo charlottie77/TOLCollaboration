@@ -14,6 +14,7 @@ import CheckAnswer from '../views/CheckAnswer.vue'
 import Doc from '../views/Doc.vue'
 import FinalReport from '../views/FinalReport.vue'
 import GroupReport from '../views/GroupReport.vue'
+import Cong from '../views/Cong.vue'
 
 Vue.use(VueRouter)
 
@@ -77,6 +78,11 @@ const routes = [
     path: '/group-report',
     name: 'GroupReport',
     component: GroupReport
+  },
+  {
+    path: '/cong',
+    name: 'Cong',
+    component: Cong
   },
   {
     path: '/about',
