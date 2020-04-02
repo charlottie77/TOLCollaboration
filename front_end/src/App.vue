@@ -63,12 +63,18 @@ body, html{
   margin: 8px 0px 8px 0px;
 }
 
-.text{
-  font-weight: normal;
-  font-size: 20px;
-  /* identical to box height */
-  color: #FFFFFF;
+.dark-input {
+  background-color: #4A4F61;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 45px;
+  outline: none;
+  caret-color: white;
+  padding: 0 15px;
+  width: calc(100% - 30px) !important
 }
-
-
+button{
+  cursor: pointer;
+}
 </style>
