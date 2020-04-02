@@ -26,6 +26,11 @@ async function fetchOneGroup(userId){
 
 router.post('/regist',async (req,res,next)=>{
   let {username,email} = req.body
+  //check if email is used
+  let exsitUser = await UserModel.findOne({email}).exec()
+  if (exsitUser !== null){
+    return res.send({error:false,user:exsitUser})
+  }
   let user = new UserModel({username,email})
   let group = await fetchOneGroup(user._id)
   if (group === null) {
