@@ -121,7 +121,11 @@
       </div>
       <div class="feedback-div">
         <label>Feedback</label>
-        <p>b  </p>
+        <p>You are right! Batteries don’t store electric charges or electrons and there is no electricity inside them. But a battery maintains a nearly 
+          constant change in electric potential across its terminals. The battery itself isn’t an electrical cell. One reason is that the 
+          underlying chemical changes that occur during an electrical discharge from the cell is efficiently reversed when an opposite electrical 
+          potential is applied across the cell. In fact they are constant voltage providers (if you ignore internal resistance) and the current 
+          depends entirely on what you connect them to. </p>
       </div>
       <router-link to="/video"><button class="gai-btn">Done</button></router-link>
     </div>
@@ -156,7 +160,11 @@
       </div>
       <div class="feedback-div">
         <label>Feedback</label>
-        <p>b!  </p>
+        <p>Not quite right! Batteries don’t store electric charges or electrons and there is no electricity inside them. But a battery maintains a nearly 
+          constant change in electric potential across its terminals. The battery itself isn’t an electrical cell. One reason is that the 
+          underlying chemical changes that occur during an electrical discharge from the cell is efficiently reversed when an opposite electrical 
+          potential is applied across the cell. In fact they are constant voltage providers (if you ignore internal resistance) and the current 
+          depends entirely on what you connect them to.  </p>
       </div>
       <router-link to="/video"><button class="gai-btn">Done</button></router-link>
     </div>
@@ -191,7 +199,10 @@
       </div>
       <div class="feedback-div">
         <label>Feedback</label>
-        <p>c </p>
+        <p>You are right! Effective recycling can reduce the carbon footprint of the production significantly! Fully charged batteries 
+          discharge when they are left unused, and will lose effectiveness. It’s not only dangerous to the environment but can also 
+          lead to an explosion depending on how the garbage is disposed. Keeping it in a cool place ensure that it is not subjected 
+          to too hot or cold temperatures which damages the battery.</p>
       </div>
       <router-link to="/video"><button class="gai-btn">Done</button></router-link>
     </div>
@@ -226,7 +237,10 @@
       </div>
       <div class="feedback-div">
         <label>Feedback</label>
-        <p>c! </p>
+        <p>Not quite right! Effective recycling can reduce the carbon footprint of the production significantly! Fully charged batteries 
+          discharge when they are left unused, and will lose effectiveness. It’s not only dangerous to the environment but can also 
+          lead to an explosion depending on how the garbage is disposed. Keeping it in a cool place ensure that it is not subjected 
+          to too hot or cold temperatures which damages the battery. </p>
       </div>
       <router-link to="/video"><button class="gai-btn">Done</button></router-link>
     </div>
